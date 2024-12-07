@@ -22,7 +22,16 @@ namespace PaymentSystemOCP
 
                 return string.Empty;
             }
+
+            ShowAllPaymentModels(factories);
             
+            Console.WriteLine("Какой системой вы хотите совершить оплату?");
+
+            return Console.ReadLine().ToLower().Trim();
+        }
+
+        private void ShowAllPaymentModels(IReadOnlyList<IPaymentModelFactory> factories)
+        {
             string paymentModels = "Мы принимаем: ";
 
             foreach (IPaymentModelFactory factory in factories)
@@ -31,9 +40,6 @@ namespace PaymentSystemOCP
             paymentModels = paymentModels.TrimEnd(',', ' ');
 
             Console.WriteLine(paymentModels);
-            Console.WriteLine("Какой системой вы хотите совершить оплату?");
-
-            return Console.ReadLine().ToLower().Trim();
         }
     }
 }
