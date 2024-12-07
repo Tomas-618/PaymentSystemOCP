@@ -48,7 +48,7 @@
     <Compile Include="Service\Domain\Model\Exceptions\PaymentStrategyIdNotFoundException.cs" />
     <Compile Include="Service\Domain\Model\PaymentStrategies\CardPaymentStrategy.cs" />
     <Compile Include="Service\Domain\Model\PaymentStrategies\QiwiPaymentStrategy.cs" />
-    <Compile Include="Service\Domain\Factories\PaymentStrategies.cs" />
+    <Compile Include="Service\Domain\Model\PaymentStrategies.cs" />
     <Compile Include="Service\Domain\Model\PaymentStrategies\Contracts\IPaymentSrategy.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
