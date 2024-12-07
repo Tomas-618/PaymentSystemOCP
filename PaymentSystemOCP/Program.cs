@@ -6,15 +6,15 @@ namespace PaymentSystemOCP
     {
         private static void Main()
         {
-            OrderForm orderForm = new OrderForm();
+            PaymentModelFactories paymentModelFactories = new PaymentModelFactories();
+
+            OrderForm orderForm = new OrderForm(paymentModelFactories);
 
             PaymentHandler paymentHandler = new PaymentHandler();
 
-            PaymentModels paymentStrategies = new PaymentModels();
+            string modelId = orderForm.ShowForm();
 
-            string systemId = orderForm.ShowForm();
-
-            IPaymentModelFactory paymentModelFactory = paymentStrategies.GetPaymentModel(systemId);
+            IPaymentModelFactory paymentModelFactory = paymentModelFactories.Get(modelId);
 
             paymentHandler.ShowPaymentResult(paymentModelFactory);
         }

@@ -48,10 +48,10 @@
     <Compile Include="Factories\QiwiPaymentModelFactory.cs" />
     <Compile Include="Factories\WebMoneyPaymentModelFactory.cs" />
     <Compile Include="ViewLayer\OrderForm.cs" />
-    <Compile Include="ViewLayer\PaymentHandler.cs" />
+    <Compile Include="Service\Domain\Model\PaymentHandler.cs" />
     <Compile Include="Service\Domain\Model\CardPaymentModel.cs" />
     <Compile Include="Service\Domain\Model\QiwiPaymentModel.cs" />
-    <Compile Include="Service\Infrastructure\PaymentModels.cs" />
+    <Compile Include="Service\Infrastructure\PaymentModelFactories.cs" />
     <Compile Include="Service\Domain\Model\Contracts\IPaymentModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
