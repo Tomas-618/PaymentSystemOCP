@@ -1,6 +1,6 @@
 ﻿namespace PaymentSystemOCP
 {
-    public interface IPaymentSrategy
+    public interface IPaymentModel
     {
         string GetPaymentResult();
     }

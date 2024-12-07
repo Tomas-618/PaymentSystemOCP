@@ -43,16 +43,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Factories\CardPaymentModelFactory.cs" />
+    <Compile Include="Factories\Contracts\IPaymentModelFactory.cs" />
+    <Compile Include="Factories\QiwiPaymentModelFactory.cs" />
+    <Compile Include="Factories\WebMoneyPaymentModelFactory.cs" />
     <Compile Include="ViewLayer\OrderForm.cs" />
     <Compile Include="ViewLayer\PaymentHandler.cs" />
-    <Compile Include="Service\Domain\Model\Exceptions\PaymentStrategyIdNotFoundException.cs" />
-    <Compile Include="Service\Domain\Model\PaymentStrategies\CardPaymentStrategy.cs" />
-    <Compile Include="Service\Domain\Model\PaymentStrategies\QiwiPaymentStrategy.cs" />
-    <Compile Include="Service\Domain\Model\PaymentStrategies.cs" />
-    <Compile Include="Service\Domain\Model\PaymentStrategies\Contracts\IPaymentSrategy.cs" />
+    <Compile Include="Service\Domain\Model\CardPaymentModel.cs" />
+    <Compile Include="Service\Domain\Model\QiwiPaymentModel.cs" />
+    <Compile Include="Service\Infrastructure\PaymentModels.cs" />
+    <Compile Include="Service\Domain\Model\Contracts\IPaymentModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service\Domain\Model\PaymentStrategies\WebMoneyPaymentStrategy.cs" />
+    <Compile Include="Service\Domain\Model\WebMoneyPaymentModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

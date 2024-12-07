@@ -1,4 +1,4 @@
-﻿using System;
+﻿using PaymentSystemOCP.Factories;
 
 namespace PaymentSystemOCP
 {
@@ -10,21 +10,13 @@ namespace PaymentSystemOCP
 
             PaymentHandler paymentHandler = new PaymentHandler();
 
-            PaymentStrategies paymentStrategies = new PaymentStrategies();
+            PaymentModels paymentStrategies = new PaymentModels();
 
             string systemId = orderForm.ShowForm();
 
-            try
-            {
-                string result = paymentStrategies.GetPaymentResult(systemId);
+            IPaymentModelFactory paymentModelFactory = paymentStrategies.GetPaymentModel(systemId);
 
-                Console.WriteLine(result);
-                paymentHandler.ShowPaymentResult(systemId);
-            }
-            catch (PaymentStrategyIdNotFoundException exception)
-            {
-                Console.WriteLine($"Не удалось найти систему оплаты по ключу <<{exception.Id}>>");
-            }
+            paymentHandler.ShowPaymentResult(paymentModelFactory);
         }
     }
 }
