@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using PaymentSystemOCP.Factories;
 
 namespace PaymentSystemOCP
 {
     public class OrderForm
     {
-        private readonly PaymentModelFactories _paymentModelFactories;
+        private readonly IPaymentModelFactoriesKeys _paymentModelFactories;
 
-        public OrderForm(PaymentModelFactories paymentModelFactories) =>
+        public OrderForm(IPaymentModelFactoriesKeys paymentModelFactories) =>
             _paymentModelFactories = paymentModelFactories ??
             throw new ArgumentNullException(nameof(paymentModelFactories));
 
