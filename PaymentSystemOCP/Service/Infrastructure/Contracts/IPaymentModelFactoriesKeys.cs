@@ -2,6 +2,6 @@
 {
     public interface IPaymentModelFactoriesKeys
     {
-        string[] GetAllKeys();
+        string[] Keys { get; }
     }
 }

@@ -13,7 +13,7 @@ namespace PaymentSystemOCP
 
         public string ShowForm()
         {
-            string[] factoriesKeys = _paymentModelFactories.GetAllKeys();
+            string[] factoriesKeys = _paymentModelFactories.Keys;
 
             if (factoriesKeys.Length == 0)
             {
