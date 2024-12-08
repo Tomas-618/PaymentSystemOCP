@@ -5,15 +5,15 @@ using PaymentSystemOCP.Factories;
 
 namespace PaymentSystemOCP
 {
-    public class PaymentModelFactories
+    public class PaymentModelFactories : IPaymentModelFactoriesKeys
     {
         private readonly Dictionary<string, IPaymentModelFactory> _factories;
 
         public PaymentModelFactories() =>
             _factories = Create();
 
-        public IReadOnlyList<IPaymentModelFactory> GetAll() =>
-            _factories.Values.ToList();
+        public IReadOnlyList<string> GetAllKeys() =>
+            _factories.Keys.ToList();
 
         public IPaymentModelFactory Get(string modelId)
         {
@@ -25,11 +25,11 @@ namespace PaymentSystemOCP
 
         private Dictionary<string, IPaymentModelFactory> Create()
         {
-            return new Dictionary<string, IPaymentModelFactory>
+            return new Dictionary<string, IPaymentModelFactory>(StringComparer.InvariantCultureIgnoreCase)
             {
-                ["qiwi"] = new QiwiPaymentModelFactory(),
-                ["webmoney"] = new WebMoneyPaymentModelFactory(),
-                ["card"] = new CardPaymentModelFactory()
+                ["QIWI"] = new QiwiPaymentModelFactory(),
+                ["WebMoney"] = new WebMoneyPaymentModelFactory(),
+                ["Card"] = new CardPaymentModelFactory()
             };
         }
     }

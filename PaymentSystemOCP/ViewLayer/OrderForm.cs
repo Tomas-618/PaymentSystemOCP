@@ -14,28 +14,28 @@ namespace PaymentSystemOCP
 
         public string ShowForm()
         {
-            IReadOnlyList<IPaymentModelFactory> factories = _paymentModelFactories.GetAll();
+            IReadOnlyList<string> factoriesKeys = _paymentModelFactories.GetAllKeys();
 
-            if (factories.Count == 0)
+            if (factoriesKeys.Count == 0)
             {
                 Console.WriteLine("На данный момент нет доступных систем оплаты");
 
                 return string.Empty;
             }
 
-            ShowAllPaymentModels(factories);
+            ShowAllPaymentModels(factoriesKeys);
             
             Console.WriteLine("Какой системой вы хотите совершить оплату?");
 
-            return Console.ReadLine().ToLower().Trim();
+            return Console.ReadLine().Trim();
         }
 
-        private void ShowAllPaymentModels(IReadOnlyList<IPaymentModelFactory> factories)
+        private void ShowAllPaymentModels(IReadOnlyList<string> factoriesKeys)
         {
             string paymentModels = "Мы принимаем: ";
 
-            foreach (IPaymentModelFactory factory in factories)
-                paymentModels += $"{factory.Create().ToString()}, ";
+            foreach (string factory in factoriesKeys)
+                paymentModels += $"{factory}, ";
 
             paymentModels = paymentModels.TrimEnd(',', ' ');
 
