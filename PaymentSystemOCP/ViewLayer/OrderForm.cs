@@ -13,9 +13,9 @@ namespace PaymentSystemOCP
 
         public string ShowForm()
         {
-            IReadOnlyList<string> factoriesKeys = _paymentModelFactories.GetAllKeys();
+            string[] factoriesKeys = _paymentModelFactories.GetAllKeys();
 
-            if (factoriesKeys.Count == 0)
+            if (factoriesKeys.Length == 0)
             {
                 Console.WriteLine("На данный момент нет доступных систем оплаты");
 
@@ -29,7 +29,7 @@ namespace PaymentSystemOCP
             return Console.ReadLine().Trim();
         }
 
-        private void ShowAllPaymentModels(IReadOnlyList<string> factoriesKeys)
+        private void ShowAllPaymentModels(string[] factoriesKeys)
         {
             string paymentModels = "Мы принимаем: ";
 

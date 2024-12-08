@@ -47,7 +47,7 @@
     <Compile Include="Factories\Contracts\IPaymentModelFactory.cs" />
     <Compile Include="Factories\QiwiPaymentModelFactory.cs" />
     <Compile Include="Factories\WebMoneyPaymentModelFactory.cs" />
-    <Compile Include="Service\Infrastructure\IPaymentModelFactoriesKeys.cs" />
+    <Compile Include="Service\Infrastructure\Contracts\IPaymentModelFactoriesKeys.cs" />
     <Compile Include="ViewLayer\OrderForm.cs" />
     <Compile Include="Service\Domain\Model\PaymentHandler.cs" />
     <Compile Include="Service\Domain\Model\CardPaymentModel.cs" />

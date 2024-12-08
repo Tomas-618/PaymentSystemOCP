@@ -12,8 +12,8 @@ namespace PaymentSystemOCP
         public PaymentModelFactories() =>
             _factories = Create();
 
-        public IReadOnlyList<string> GetAllKeys() =>
-            _factories.Keys.ToList();
+        public string[] GetAllKeys() =>
+            _factories.Keys.ToArray();
 
         public IPaymentModelFactory Get(string modelId)
         {
